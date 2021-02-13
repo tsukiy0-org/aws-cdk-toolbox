@@ -1,0 +1,21 @@
+version: '3'
+services:
+  build:
+    image: node:12
+    volumes:
+      - ../../:/app
+    working_dir: /app
+    environment:
+      GITHUB_TOKEN: ${GITHUB_TOKEN}
+    command: ./tasks/ci/build.sh
+  deploy:
+    image: node:12
+    volumes:
+      - ../../:/app
+    working_dir: /app
+    environment:
+      DEPLOY: ${DEPLOY}
+      GITHUB_TOKEN: ${GITHUB_TOKEN}
+      NPM_TOKEN: ${GITHUB_TOKEN}
+      CI: "true"
+    command: ./tasks/ci/deploy.sh

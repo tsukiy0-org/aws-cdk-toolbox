@@ -21,5 +21,19 @@
     "lint": "eslint \"./src/**/*.{ts,tsx}\"",
     "lint:fix": "yarn lint --fix",
     "build": "tsc --build ."
+  },
+  "dependencies": {
+    "@aws-cdk/aws-certificatemanager": "1.87.0",
+    "@aws-cdk/aws-cloudfront": "1.87.0",
+    "@aws-cdk/aws-s3": "1.87.0",
+    "@aws-cdk/aws-s3-deployment": "1.87.0",
+    "@aws-cdk/core": "1.87.0"
+  },
+  "peerDependencies": {
+    "@aws-cdk/aws-certificatemanager": "^1.87.0",
+    "@aws-cdk/aws-cloudfront": "^1.87.0",
+    "@aws-cdk/aws-s3": "^1.87.0",
+    "@aws-cdk/aws-s3-deployment": "^1.87.0",
+    "@aws-cdk/core": "^1.87.0"
   }
 }

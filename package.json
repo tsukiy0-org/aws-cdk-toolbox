@@ -1,7 +1,7 @@
 {
   "name": "@tsukiy0/aws-cdk-toolbox",
   "version": "0.0.0",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "repository": "https://github.com/tsukiy0/aws-cdk-toolbox.git",
   "author": "tsukiy0 <tsukiy0@users.noreply.github.com>",
   "license": "MIT",
@@ -19,6 +19,7 @@
   "scripts": {
     "deploy": "semantic-release",
     "lint": "eslint \"./src/**/*.{ts,tsx}\"",
-    "lint:fix": "yarn lint --fix"
+    "lint:fix": "yarn lint --fix",
+    "build": "tsc --build ."
   }
 }

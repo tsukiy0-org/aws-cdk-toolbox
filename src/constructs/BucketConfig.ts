@@ -11,7 +11,7 @@ export class BucketConfig extends Construct {
     props: {
       bucket: IBucket;
       config: Record<string, string>;
-    },
+    }
   ) {
     super(scope, id);
 
@@ -49,7 +49,7 @@ exports.handler = async (event) => {
       runtime: Runtime.NODEJS_12_X,
       handler: "index.handler",
       memorySize: 128,
-      timeout,
+      timeout
     });
     props.bucket.grantWrite(onEventFn);
 
@@ -64,13 +64,13 @@ exports.handler = async () => {
       runtime: Runtime.NODEJS_12_X,
       handler: "index.handler",
       memorySize: 128,
-      timeout,
+      timeout
     });
 
     const provider = new Provider(this, "Provider", {
       onEventHandler: onEventFn,
       isCompleteHandler: onCompleteFn,
-      totalTimeout: timeout,
+      totalTimeout: timeout
     });
 
     new CustomResource(this, "Resource", {
@@ -78,8 +78,8 @@ exports.handler = async () => {
       properties: {
         RANDOM_SEED: uuid.v4(),
         BUCKET_NAME: props.bucket.bucketName,
-        ...props.config,
-      },
+        ...props.config
+      }
     });
   }
 }

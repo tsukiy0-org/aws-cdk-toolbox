@@ -1,6 +1,7 @@
 {
   "extends": "@tsconfig/recommended",
   "compilerOptions": {
+    "module": "esnext",
     "rootDir": "src",
     "outDir": "dist",
     "declaration": true,

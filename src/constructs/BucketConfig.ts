@@ -26,7 +26,7 @@ exports.handler = async (event) => {
 
   const work = async () => {
     const s3 = new AWS.S3();
-    const { BUCKET_NAME, RANDOM_SEED, ...rest } = event.ResourceProperties;
+    const { BUCKET_NAME, RANDOM_SEED, ServiceToken, ...rest } = event.ResourceProperties;
 
     await s3
       .upload({

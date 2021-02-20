@@ -2,7 +2,7 @@ import { Construct, CustomResource, Duration } from "@aws-cdk/core";
 import { Code, Runtime } from "@aws-cdk/aws-lambda";
 import { Provider } from "@aws-cdk/custom-resources";
 import { IBucket } from "@aws-cdk/aws-s3";
-import { JsFunction } from "./JsFunction";
+import { DefaultFunction } from "./DefaultFunction";
 
 export class BucketConfig extends Construct {
   constructor(
@@ -17,7 +17,7 @@ export class BucketConfig extends Construct {
 
     const timeout = Duration.seconds(30);
 
-    const onEventFn = new JsFunction(this, "OnEventFunction", {
+    const onEventFn = new DefaultFunction(this, "OnEventFunction", {
       code: Code.fromInline(`
 const AWS = require("aws-sdk");
 
@@ -54,7 +54,7 @@ exports.handler = async (event) => {
     });
     props.bucket.grantWrite(onEventFn);
 
-    const onCompleteFn = new JsFunction(this, "OnCompleteFunction", {
+    const onCompleteFn = new DefaultFunction(this, "OnCompleteFunction", {
       code: Code.fromInline(`
 exports.handler = async () => {
   return {

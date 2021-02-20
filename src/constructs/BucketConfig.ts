@@ -1,8 +1,8 @@
 import { Construct, CustomResource, Duration } from "@aws-cdk/core";
-import { Code, Function as LambdaFunction, Runtime } from "@aws-cdk/aws-lambda";
+import { Code, Runtime } from "@aws-cdk/aws-lambda";
 import { Provider } from "@aws-cdk/custom-resources";
 import { IBucket } from "@aws-cdk/aws-s3";
-import { RetentionDays } from "@aws-cdk/aws-logs";
+import { JsFunction } from "./JsFunction";
 
 export class BucketConfig extends Construct {
   constructor(
@@ -17,7 +17,7 @@ export class BucketConfig extends Construct {
 
     const timeout = Duration.seconds(30);
 
-    const onEventFn = new LambdaFunction(this, "OnEventFunction", {
+    const onEventFn = new JsFunction(this, "OnEventFunction", {
       code: Code.fromInline(`
 const AWS = require("aws-sdk");
 
@@ -50,14 +50,11 @@ exports.handler = async (event) => {
       `),
       runtime: Runtime.NODEJS_12_X,
       handler: "index.handler",
-      memorySize: 128,
-      logRetention: RetentionDays.ONE_DAY,
-      retryAttempts: 0,
       timeout
     });
     props.bucket.grantWrite(onEventFn);
 
-    const onCompleteFn = new LambdaFunction(this, "OnCompleteFunction", {
+    const onCompleteFn = new JsFunction(this, "OnCompleteFunction", {
       code: Code.fromInline(`
 exports.handler = async () => {
   return {
@@ -67,9 +64,6 @@ exports.handler = async () => {
       `),
       runtime: Runtime.NODEJS_12_X,
       handler: "index.handler",
-      memorySize: 128,
-      logRetention: RetentionDays.ONE_DAY,
-      retryAttempts: 0,
       timeout
     });
 

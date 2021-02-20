@@ -14,7 +14,6 @@
   ],
   "devDependencies": {
     "@semantic-release/git": "9.0.0",
-    "@types/uuid": "8.3.0",
     "semantic-release": "17.3.9",
     "tsdx": "0.14.1",
     "typescript": "4.1.5"
@@ -29,16 +28,17 @@
     "@aws-cdk/aws-certificatemanager": "1.87.0",
     "@aws-cdk/aws-cloudfront": "1.87.0",
     "@aws-cdk/aws-lambda": "1.87.0",
+    "@aws-cdk/aws-logs": "1.87.0",
     "@aws-cdk/aws-s3": "1.87.0",
     "@aws-cdk/aws-s3-deployment": "1.87.0",
     "@aws-cdk/core": "1.87.0",
-    "@aws-cdk/custom-resources": "1.87.0",
-    "uuid": "8.3.2"
+    "@aws-cdk/custom-resources": "1.87.0"
   },
   "peerDependencies": {
     "@aws-cdk/aws-certificatemanager": "^1.87.0",
     "@aws-cdk/aws-cloudfront": "^1.87.0",
     "@aws-cdk/aws-lambda": "^1.87.0",
+    "@aws-cdk/aws-logs": "^1.87.0",
     "@aws-cdk/aws-s3": "^1.87.0",
     "@aws-cdk/aws-s3-deployment": "^1.87.0",
     "@aws-cdk/core": "^1.87.0",

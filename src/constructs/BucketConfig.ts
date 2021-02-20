@@ -2,7 +2,7 @@ import { Construct, CustomResource, Duration } from "@aws-cdk/core";
 import { Code, Function as LambdaFunction, Runtime } from "@aws-cdk/aws-lambda";
 import { Provider } from "@aws-cdk/custom-resources";
 import { IBucket } from "@aws-cdk/aws-s3";
-import * as uuid from "uuid";
+import { RetentionDays } from "@aws-cdk/aws-logs";
 
 export class BucketConfig extends Construct {
   constructor(
@@ -22,6 +22,8 @@ export class BucketConfig extends Construct {
 const AWS = require("aws-sdk");
 
 exports.handler = async (event) => {
+  console.log(event);
+
   const work = async () => {
     const s3 = new AWS.S3();
     const { BUCKET_NAME, RANDOM_SEED, ...rest } = event.ResourceProperties;
@@ -49,6 +51,8 @@ exports.handler = async (event) => {
       runtime: Runtime.NODEJS_12_X,
       handler: "index.handler",
       memorySize: 128,
+      logRetention: RetentionDays.ONE_DAY,
+      retryAttempts: 0,
       timeout
     });
     props.bucket.grantWrite(onEventFn);
@@ -64,6 +68,8 @@ exports.handler = async () => {
       runtime: Runtime.NODEJS_12_X,
       handler: "index.handler",
       memorySize: 128,
+      logRetention: RetentionDays.ONE_DAY,
+      retryAttempts: 0,
       timeout
     });
 
@@ -76,7 +82,7 @@ exports.handler = async () => {
     new CustomResource(this, "Resource", {
       serviceToken: provider.serviceToken,
       properties: {
-        RANDOM_SEED: uuid.v4(),
+        RANDOM_SEED: Math.floor(Math.random() * 1000000),
         BUCKET_NAME: props.bucket.bucketName,
         ...props.config
       }

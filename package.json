@@ -22,7 +22,8 @@
     "deploy": "semantic-release",
     "build": "tsdx build --target node",
     "test": "tsdx test",
-    "lint": "tsdx lint"
+    "lint": "tsdx lint",
+    "typecheck": "tsc --noemit"
   },
   "dependencies": {
     "@aws-cdk/aws-certificatemanager": "1.87.0",

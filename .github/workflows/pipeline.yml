@@ -4,6 +4,7 @@ on:
     branches:
       - master
       - beta
+  workflow_dispatch:
 jobs:
   pipeline:
     runs-on: ubuntu-latest

@@ -6,7 +6,7 @@
   "author": "tsukiy0 <tsukiy0@users.noreply.github.com>",
   "license": "MIT",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "files": [
     "dist",

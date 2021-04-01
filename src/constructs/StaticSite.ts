@@ -21,7 +21,7 @@ export class StaticSite extends Construct {
     scope: Construct,
     id: string,
     props: {
-      domainName: string;
+      domainName?: string;
       source: ISource;
       noCachePathPatterns: string[];
     }
@@ -40,15 +40,10 @@ export class StaticSite extends Construct {
       sources: [props.source]
     });
 
-    const certificate = new Certificate(this, "Certificate", {
-      domainName: props.domainName,
-      validation: CertificateValidation.fromDns()
-    });
-
     const cdn = new CloudFrontWebDistribution(this, "CloudFront", {
-      viewerCertificate: ViewerCertificate.fromAcmCertificate(certificate, {
-        aliases: [props.domainName]
-      }),
+      viewerCertificate: props.domainName
+        ? this.createCertificate(props.domainName)
+        : undefined,
       originConfigs: [
         {
           customOriginSource: {
@@ -74,5 +69,16 @@ export class StaticSite extends Construct {
 
     this.bucket = bucket;
     this.cdn = cdn;
+  }
+
+  private createCertificate(domainName: string) {
+    const certificate = new Certificate(this, "Certificate", {
+      domainName: domainName,
+      validation: CertificateValidation.fromDns()
+    });
+
+    return ViewerCertificate.fromAcmCertificate(certificate, {
+      aliases: [domainName]
+    });
   }
 }

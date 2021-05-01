@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/tsukiy0-org/aws-cdk-toolbox/compare/@tsukiy0/aws-cdk-toolbox@1.4.0...@tsukiy0/aws-cdk-toolbox@1.5.0) (2021-05-01)
+
+
+### Features
+
+* add LogAlarm ([6e3600f](https://github.com/tsukiy0-org/aws-cdk-toolbox/commit/6e3600fbc33d84776b7717997722150f5bfcabdf))
+
+
+
+
+
 # [1.4.0](https://github.com/tsukiy0-org/aws-cdk-toolbox/compare/@tsukiy0/aws-cdk-toolbox@1.4.0-alpha.1...@tsukiy0/aws-cdk-toolbox@1.4.0) (2021-05-01)
 
 **Note:** Version bump only for package @tsukiy0/aws-cdk-toolbox

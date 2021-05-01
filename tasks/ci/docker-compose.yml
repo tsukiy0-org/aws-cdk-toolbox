@@ -13,5 +13,4 @@ services:
     working_dir: /app
     environment:
       NPM_TOKEN: ${NPM_TOKEN}
-      RELEASE: ${RELEASE}
     command: bash ./tasks/ci/publish

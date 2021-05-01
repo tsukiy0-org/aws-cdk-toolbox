@@ -4,9 +4,4 @@ set -euxo pipefail
 
 echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} >> .npmrc
 
-if [ ${RELEASE:-"false"} == "true" ]
-then
-    echo "deploying!"
-else
-    yarn publish:canary
-fi
+yarn run publish

@@ -24,6 +24,7 @@
     "test": "lerna run test",
     "test:integration": "lerna run test:integration",
     "lint": "eslint packages --ext .ts,.tsx",
+    "publish": "lerna publish --loglevel=verbose --no-verify-access --conventional-commits --yes",
     "publish:canary": "lerna publish --loglevel=verbose --no-verify-access --canary --yes"
   }
 }

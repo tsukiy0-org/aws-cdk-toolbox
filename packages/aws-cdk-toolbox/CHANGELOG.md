@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0-alpha.0](https://github.com/tsukiy0-org/aws-cdk-toolbox/compare/@tsukiy0/aws-cdk-toolbox@1.5.0...@tsukiy0/aws-cdk-toolbox@1.6.0-alpha.0) (2021-05-01)
+
+
+### Features
+
+* add FunctionApi ([9d7299e](https://github.com/tsukiy0-org/aws-cdk-toolbox/commit/9d7299edf3d72ea27b4d90ac19d7ee96d6d7ead7))
+
+
+
+
+
 # [1.5.0](https://github.com/tsukiy0-org/aws-cdk-toolbox/compare/@tsukiy0/aws-cdk-toolbox@1.4.0...@tsukiy0/aws-cdk-toolbox@1.5.0) (2021-05-01)
 
 

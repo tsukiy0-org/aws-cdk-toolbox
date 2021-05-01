@@ -25,6 +25,7 @@ jobs:
       - name: publish
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          RELEASE: ${{ github.event.inputs.release }}
         run: |
           docker-compose -f tasks/ci/docker-compose.yml build publish
           docker-compose -f tasks/ci/docker-compose.yml run publish

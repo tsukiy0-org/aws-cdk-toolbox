@@ -5,9 +5,7 @@ services:
     volumes:
       - ../../:/app
     working_dir: /app
-    environment:
-      NPM_TOKEN: ${NPM_TOKEN}
-    command: ./tasks/ci/build.sh
+    command: bash ./tasks/ci/build.sh
   deploy:
     image: node:12
     volumes:

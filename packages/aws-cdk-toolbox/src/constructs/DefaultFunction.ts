@@ -7,14 +7,14 @@ export class DefaultFunction extends LambdaFunction {
     scope: Construct,
     id: string,
     props: Pick<FunctionProps, "code" | "handler" | "runtime"> &
-      Partial<FunctionProps>
+      Partial<FunctionProps>,
   ) {
     super(scope, id, {
       memorySize: 128,
       timeout: Duration.seconds(30),
       logRetention: RetentionDays.ONE_WEEK,
       retryAttempts: 0,
-      ...props
+      ...props,
     });
   }
 }

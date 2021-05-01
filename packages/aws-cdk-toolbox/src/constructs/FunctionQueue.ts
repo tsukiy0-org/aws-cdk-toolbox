@@ -14,7 +14,7 @@ export class FunctionQueue extends Construct {
       timeout: Duration;
       batchSize: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
       maxReceiveCount: number;
-    }
+    },
   ) {
     super(scope, id);
 
@@ -23,12 +23,12 @@ export class FunctionQueue extends Construct {
       visibilityTimeout: Duration.millis(6 * props.timeout.toMilliseconds()),
       deadLetterQueue: {
         queue: new Queue(this, "DeadLetterQueue"),
-        maxReceiveCount: props.maxReceiveCount
-      }
+        maxReceiveCount: props.maxReceiveCount,
+      },
     });
 
     const source = new SqsEventSource(queue, {
-      batchSize: props.batchSize
+      batchSize: props.batchSize,
     });
 
     props.fn.addEventSource(source);

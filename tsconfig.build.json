@@ -1,0 +1,9 @@
+{
+    "extends": "@tsconfig/recommended",
+    "compilerOptions": {
+        "sourceMap": true,
+        "declaration": true,
+        "noEmitOnError": true,
+        "resolveJsonModule": true
+    }
+}

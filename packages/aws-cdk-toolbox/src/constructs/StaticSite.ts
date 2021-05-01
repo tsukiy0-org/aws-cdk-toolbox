@@ -5,11 +5,11 @@ import {
   CloudFrontWebDistribution,
   IDistribution,
   OriginProtocolPolicy,
-  ViewerCertificate
+  ViewerCertificate,
 } from "@aws-cdk/aws-cloudfront";
 import {
   Certificate,
-  CertificateValidation
+  CertificateValidation,
 } from "@aws-cdk/aws-certificatemanager";
 
 export class StaticSite extends Construct {
@@ -24,7 +24,7 @@ export class StaticSite extends Construct {
       domainName?: string;
       source: ISource;
       noCachePathPatterns: string[];
-    }
+    },
   ) {
     super(scope, id);
 
@@ -32,12 +32,12 @@ export class StaticSite extends Construct {
       websiteIndexDocument: "index.html",
       websiteErrorDocument: "index.html",
       publicReadAccess: true,
-      removalPolicy: RemovalPolicy.DESTROY
+      removalPolicy: RemovalPolicy.DESTROY,
     });
 
     new BucketDeployment(this, "BucketDeployment", {
       destinationBucket: bucket,
-      sources: [props.source]
+      sources: [props.source],
     });
 
     const cdn = new CloudFrontWebDistribution(this, "CloudFront", {
@@ -48,23 +48,23 @@ export class StaticSite extends Construct {
         {
           customOriginSource: {
             domainName: bucket.bucketWebsiteDomainName,
-            originProtocolPolicy: OriginProtocolPolicy.HTTP_ONLY
+            originProtocolPolicy: OriginProtocolPolicy.HTTP_ONLY,
           },
           behaviors: [
             {
-              isDefaultBehavior: true
+              isDefaultBehavior: true,
             },
-            ...props.noCachePathPatterns.map(pathPattern => {
+            ...props.noCachePathPatterns.map((pathPattern) => {
               return {
                 pathPattern,
                 defaultTtl: Duration.minutes(0),
                 minTtl: Duration.minutes(0),
-                maxTtl: Duration.minutes(0)
+                maxTtl: Duration.minutes(0),
               };
-            })
-          ]
-        }
-      ]
+            }),
+          ],
+        },
+      ],
     });
 
     this.bucket = bucket;
@@ -74,11 +74,11 @@ export class StaticSite extends Construct {
   private createCertificate(domainName: string) {
     const certificate = new Certificate(this, "Certificate", {
       domainName: domainName,
-      validation: CertificateValidation.fromDns()
+      validation: CertificateValidation.fromDns(),
     });
 
     return ViewerCertificate.fromAcmCertificate(certificate, {
-      aliases: [domainName]
+      aliases: [domainName],
     });
   }
 }

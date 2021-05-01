@@ -12,5 +12,5 @@ services:
       - ../../:/app
     working_dir: /app
     environment:
-      NODE_AUTH_TOKEN: ${NODE_AUTH_TOKEN}
+      NPM_TOKEN: ${NPM_TOKEN}
     command: bash ./tasks/ci/publish

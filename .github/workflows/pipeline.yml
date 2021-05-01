@@ -15,10 +15,10 @@ jobs:
           docker-compose -f tasks/ci/docker-compose.yml build build
           docker-compose -f tasks/ci/docker-compose.yml run build
           docker-compose -f tasks/ci/docker-compose.yml down
-    #   - name: deploy
-    #     env:
-    #       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-    #     run: |
-    #       docker-compose -f tasks/ci/docker-compose.yml build deploy
-    #       docker-compose -f tasks/ci/docker-compose.yml run deploy
-    #       docker-compose -f tasks/ci/docker-compose.yml down
+      - name: publish
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          docker-compose -f tasks/ci/docker-compose.yml build publish
+          docker-compose -f tasks/ci/docker-compose.yml run publish
+          docker-compose -f tasks/ci/docker-compose.yml down

@@ -23,6 +23,7 @@
     "build": "lerna run build",
     "test": "lerna run test",
     "test:integration": "lerna run test:integration",
-    "lint": "eslint packages --ext .ts,.tsx"
+    "lint": "eslint packages --ext .ts,.tsx",
+    "publish": "lerna version --conventional-commits"
   }
 }

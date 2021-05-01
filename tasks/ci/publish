@@ -2,4 +2,4 @@
 
 set -euxo pipefail
 
-yarn publish
+yarn publish:canary

@@ -24,8 +24,8 @@
     "test": "lerna run test",
     "test:integration": "lerna run test:integration",
     "lint": "eslint packages --ext .ts,.tsx",
-    "version:prerelease": "lerna version --conventional-commits --conventional-prerelease",
-    "version:release": "lerna version --conventional-commits --conventional-graduate",
+    "version:prerelease": "lerna version --conventional-commits --conventional-prerelease -m \"chore: publish %s\"",
+    "version:release": "lerna version --conventional-commits --conventional-graduate -m \"chore: publish %s\"",
     "publish": "lerna publish from-git --loglevel=verbose --no-verify-access --yes"
   }
 }

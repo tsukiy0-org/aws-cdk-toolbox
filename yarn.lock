@@ -49,6 +49,21 @@
     "@aws-cdk/core" "1.87.0"
     constructs "^3.2.0"
 
+"@aws-cdk/aws-autoscaling@1.87.0":
+  version "1.87.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-autoscaling/-/aws-autoscaling-1.87.0.tgz#214aec6824fe8d476ab60a73544c27b42d1681f4"
+  integrity sha512-6MbaNoe7c/nXeACZUPISNsEwh2lIJEWYvxhIjAadn9psP/2zjMKzO3rYzLKFZKqj8A/3YHuwD8AoFR668W7p3w==
+  dependencies:
+    "@aws-cdk/aws-autoscaling-common" "1.87.0"
+    "@aws-cdk/aws-cloudwatch" "1.87.0"
+    "@aws-cdk/aws-ec2" "1.87.0"
+    "@aws-cdk/aws-elasticloadbalancing" "1.87.0"
+    "@aws-cdk/aws-elasticloadbalancingv2" "1.87.0"
+    "@aws-cdk/aws-iam" "1.87.0"
+    "@aws-cdk/aws-sns" "1.87.0"
+    "@aws-cdk/core" "1.87.0"
+    constructs "^3.2.0"
+
 "@aws-cdk/aws-certificatemanager@1.87.0":
   version "1.87.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-certificatemanager/-/aws-certificatemanager-1.87.0.tgz#1e08dbfb3d28e9a435ddde365d18eb2492292a9d"
@@ -86,6 +101,19 @@
     "@aws-cdk/aws-lambda" "1.87.0"
     "@aws-cdk/aws-s3" "1.87.0"
     "@aws-cdk/aws-ssm" "1.87.0"
+    "@aws-cdk/core" "1.87.0"
+    constructs "^3.2.0"
+
+"@aws-cdk/aws-cloudwatch-actions@1.87.0":
+  version "1.87.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-cloudwatch-actions/-/aws-cloudwatch-actions-1.87.0.tgz#1a98512d7e794bdfcd3de87726998e94e7d56ce5"
+  integrity sha512-yoaHwrX9aB0loWArj3uo6K2F/CUz0W3M1LbJ9Uofz09HPFB9OfGWWBQg0ecDrpVDbcB9ClXqavkcJwtKizku+A==
+  dependencies:
+    "@aws-cdk/aws-applicationautoscaling" "1.87.0"
+    "@aws-cdk/aws-autoscaling" "1.87.0"
+    "@aws-cdk/aws-cloudwatch" "1.87.0"
+    "@aws-cdk/aws-iam" "1.87.0"
+    "@aws-cdk/aws-sns" "1.87.0"
     "@aws-cdk/core" "1.87.0"
     constructs "^3.2.0"
 
@@ -173,6 +201,15 @@
     "@aws-cdk/cloud-assembly-schema" "1.87.0"
     "@aws-cdk/core" "1.87.0"
     "@aws-cdk/cx-api" "1.87.0"
+    constructs "^3.2.0"
+
+"@aws-cdk/aws-elasticloadbalancing@1.87.0":
+  version "1.87.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-elasticloadbalancing/-/aws-elasticloadbalancing-1.87.0.tgz#adc5e17146d9a43f9d7b1e209ed2464f662c6904"
+  integrity sha512-C+wxfCx+3c51sVayTBHUKmBUdROAYZXCoWzKLo8vapCMf5zPPad0gWMA8lbak8aD5NfZlS+uCg3+5NiYc75+Vw==
+  dependencies:
+    "@aws-cdk/aws-ec2" "1.87.0"
+    "@aws-cdk/core" "1.87.0"
     constructs "^3.2.0"
 
 "@aws-cdk/aws-elasticloadbalancingv2@1.87.0":

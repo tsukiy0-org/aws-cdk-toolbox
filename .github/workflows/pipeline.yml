@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 50
+          fetch-depth: 0
       - name: build
         run: |
           docker-compose -f tasks/ci/docker-compose.yml build build

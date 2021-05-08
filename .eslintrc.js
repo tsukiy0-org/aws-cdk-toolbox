@@ -7,6 +7,9 @@ module.exports = {
     "prettier",
   ],
   plugins: ["@typescript-eslint", "prettier"],
+  ignorePatterns: [
+    "**/*.d.ts"
+  ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     tsconfigRootDir: __dirname,

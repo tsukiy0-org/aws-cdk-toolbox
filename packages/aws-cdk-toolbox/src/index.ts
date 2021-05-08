@@ -1,5 +1,9 @@
-export { StaticSite } from "./constructs/StaticSite";
-export { BucketConfig } from "./constructs/BucketConfig";
-export { DefaultFunction } from "./constructs/DefaultFunction";
-export { DefaultDockerFunction } from "./constructs/DefaultDockerFunction";
-export { FunctionQueue } from "./constructs/FunctionQueue";
+export * from "./constructs/StaticSite";
+export * from "./constructs/BucketConfig";
+export * from "./constructs/DefaultFunction";
+export * from "./constructs/DefaultDockerFunction";
+export * from "./constructs/FunctionQueue";
+export * from "./constructs/BillingAlarm";
+export * from "./constructs/EmailNotification";
+export * from "./constructs/FunctionApi";
+export * from "./constructs/LogAlarm";

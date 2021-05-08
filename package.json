@@ -26,6 +26,6 @@
     "lint": "eslint packages --ext .ts,.tsx",
     "version:prerelease": "lerna version --conventional-commits --conventional-prerelease -m \"chore: publish\"",
     "version:release": "lerna version --conventional-commits --conventional-graduate -m \"chore: publish\"",
-    "publish": "lerna publish from-git --loglevel=verbose --no-verify-access --yes"
+    "publish": "lerna publish from-package --loglevel=verbose --no-verify-access --dist-tag prerelease --yes"
   }
 }

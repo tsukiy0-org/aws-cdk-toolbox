@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0-alpha.1](https://github.com/tsukiy0-org/aws-cdk-toolbox/compare/@tsukiy0/aws-cdk-toolbox@1.6.0-alpha.0...@tsukiy0/aws-cdk-toolbox@1.6.0-alpha.1) (2021-05-08)
+
+
+### Features
+
+* export new constructs ([ed8e2e0](https://github.com/tsukiy0-org/aws-cdk-toolbox/commit/ed8e2e02177cf93121327cea20af311163215643))
+* upgrade cdk to 1.101.0 ([ea38eec](https://github.com/tsukiy0-org/aws-cdk-toolbox/commit/ea38eec7f73a4709c195dd02039b1fd780be47c2))
+
+
+
+
+
 # [1.6.0-alpha.0](https://github.com/tsukiy0-org/aws-cdk-toolbox/compare/@tsukiy0/aws-cdk-toolbox@1.5.0...@tsukiy0/aws-cdk-toolbox@1.6.0-alpha.0) (2021-05-01)
 
 
